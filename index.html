@@ -6,12 +6,17 @@
         <title>SGA</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="CSS/style.css">
     </head>
     <body>
-        <h1>Sistema de Gestion Academica</h1>
+        <header>
+            <h1>Sistema de Gestion Academica</h1>
+        </header>
+        <main>
         <h2>Alta de Alumno</h2>
-        <form id="formAlumno">
+
+        <section>
+            <form id="formAlumno">
             <label for="nombre">Nombre</label>
             <input type="text" id="nombre"><br><br>
 
@@ -22,10 +27,30 @@
             <input type="email" id="correo"><br><br>
 
             <button type="submit">Guardar Alumno</button>
-            <hr>
-            <h2>Alumnos registrados</h2>
-            <ul id="listaAlumnos"></ul>
-        </form>
+            
+            <p id="mensaje"></p>
+            </form>
+        </section>
+
+            <section class="alumnos">
+                <h2>Alumnos registrados</h2>
+                <p id="cantidadAlumnos/"></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Carrera</th>
+                            <th>Correo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaAlumnos"></tbody>
+                </table>
+            </section>
+            
+
+        <main>
         <script src="" async defer></script>
     </body>
 </html>

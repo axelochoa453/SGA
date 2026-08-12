@@ -105,6 +105,7 @@ mostrarDocentes()
 */
 
     const formulario = document.querySelector("#formAlumno")
+    const mensaje = document.querySelector("#mensaje")
 
     formulario.addEventListener("submit", function(event){
         event.preventDefault();
@@ -125,6 +126,8 @@ mostrarDocentes()
 
     localStorage.setItem("alumnos", JSON.stringify(alumnos))
 
+    mensaje.textContent = "Alumno guardado correctamente"
+
     mostrarAlumnos(alumnos)
 
     formulario.reset()
@@ -138,16 +141,55 @@ function obtenerAlumnos() {
     return []
 }
 
+function mostrarMensaje(texto){
+    mensaje.textContent = " ";
+    setTimeout(() => {
+        mensaje.texto = "";
+    }, 3000);
+}
+
 const listaAlumnos = document.querySelector("#listaAlumnos")
 
 function mostrarAlumnos(alumnos){
     listaAlumnos.innerHTML = ""
     for (const alumno of alumnos) {
         listaAlumnos.innerHTML += `
-        <li>
-        $(alumno.nombre) - 
-        $(alumno.carrera) -
-        $(alumno.correo)
-        </li>`;
+        <tr>
+            <td>$(alumno.id)</td>
+            <td>$(alumno.nombre)</td>
+            <td>$(alumno.carrera)</td>
+            <td>$(alumno.correo)</td>
+            <td>
+                <button class="btn-editar" data-id="$(alumno.id)">Editar</button>
+                <button class="btn-eliminar" data-id="$(alumno.id)">Eliminar</button>
+            </td>
+        </tr>
+        `;
     }
+}
+
+function eliminarAlumno(id){
+    const alumnos = obtenerAlumnos()
+    const alumnoActualizados = alumnos.filter(
+        alumno => alumno.id !== id
+    );
+    localStorage.setItem("alumno", JSON.stringify(alumnoActualizados))
+    mostrarAlumnos(alumnoActualizados)
+    mostrarMensaje("Alumno eliminado correctamente")
+}
+
+listaAlumnos.addEventListener("click", (e) => {
+    if (e.target.classList.contains("btn-eliminar")) {
+        const id = Number(e.target.dataset.id)
+        eliminarAlumno(id)
+    }
+})
+
+function editarAlumno(id){
+    const alumnos = obtenerAlumnos
+    const alumno = alumnos.find(alumno => alumno.id === id)
+    document.querySelector("#nombre").value;
+    document.querySelector("#carrera").value;
+    document.querySelector("#correo").value;
+    alumnoEditandoId = id
 }
