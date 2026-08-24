@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+        <link rel="stylesheet" href="css/estilos.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+        <script src="JS/alumnos.js" defer></script>
+        <title>SGA</title>
+    </head>
+    <body>
+        <header>
+            <h1>Sistema de Gestión Académica</h1>
+        </header>
+        <main>
+            <section class="formulario">
+                <h2>Alta de Alumno</h2>
+                <form id="formAlumno">
+                    <div>
+                    <label for="nombre">Nombre</label>
+                    <input type="text" id="nombre"><br><br>
+                    <div>
+                    <label for="carrera">Carrera</label>
+                    <input type="text" id="carrera"><br><br>
+                    <div>
+                    <label for="correo">Correo electrónico</label>
+                    <input type="texto" id="correo"> <br><br>
+                    <div>
+                    <button type="submit">Guardar Alumno</button>
+                </form>
+                <p id="mensaje" class="oculto"></p>
+            </section>
+            <section class="alumnos">
+                <h2>Alumnos registrados</h2>
+                <p id="cantidadAlumnos"></p>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Carrera</th>
+                            <th>Correo</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listaAlumnos"></tbody>
+                </table>
+            </section>
+        </main>
+    </body>
+</html>
