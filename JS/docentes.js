@@ -46,7 +46,7 @@ formulario.addEventListener("submit", function (event) {
 
         mostrarMensaje("Docente actualizado correctamente", "mje-exito")
     }
-    localStorage.setItem("docentes", JSON.stringify(docentes))
+    // localStorage.setItem("docentes", JSON.stringify(docentes))
     guardarDatos("docentes", docentes)
     mostraDocentes(docentes)
     formulario.reset()
@@ -54,8 +54,9 @@ formulario.addEventListener("submit", function (event) {
 
 
 function obtenerDocentes() {
-    obtenerDatos("docentes")
+  return obtenerDatos("docentes")
 }
+
 
 function mostraDocentes(docentes) {
     listaDocentes.innerHTML = ""

@@ -6,13 +6,11 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     background-color: #f4f6f8;
+    color: #333;
 }
 
 header {
     background-color: #1f2937;
-    color: white;
-    padding: 20px;
-    text-align: center;
 }
 
 nav {
@@ -26,7 +24,7 @@ nav {
 nav a {
     color: white;
     text-decoration: none;
-    padding: 10px 20px;
+    padding: 18px 20px;
     transition: background-color 0.2s;
 }
 
@@ -39,7 +37,7 @@ nav a.activo {
 }
 
 main {
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
 }
@@ -57,9 +55,8 @@ h2 {
     padding: 25px;
     border-radius: 10px;
     margin-bottom: 30px;
-    box-shadow: 0 2px 8px rgb(0, 0, 0, 0.08);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
-
 
 
 form {
@@ -84,32 +81,31 @@ form {
     font-size: 16px;
 }
 
-.campo input:focus{
+.campo input:focus {
     outline: none;
     border-color: #2563eb;
     box-shadow: 0 0 0 2px rgba(37, 99, 0235, 0.15);
 }
 
 button {
-    padding: 10px 15px;
+    padding: 11px 18px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
+    background-color: #2563eb;
+    color: white;
+    font-size: 15px;
     cursor: pointer;
 }
 
-button::hover {
-    background-color: gray;
+button:hover {
+    background-color: #1d4ed8;
 }
 
 .lista-container {
     background-color: white;
     padding: 25px;
     border-radius: 10px;
-    box-shadow: 0 0 0 2px rgba(red, green, blue, alpha);
-}
-
-form button {
-    margin-top: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 table {
@@ -127,38 +123,25 @@ th {
     background-color: #f0f0f0;
 }
 
-.mje-exito {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    padding: 15px 20px;
-    border-radius: 8px;
-    font-weight: bold;
-    background-color: #d1fae5;
-    color: #166534;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    z-index: 1000;
-}
 
 .mensaje {
     position: fixed;
     top: 20px;
     right: 20px;
     padding: 15px 20px;
-    border-radius: 6px;
+    border-radius: 8px;
     font-weight: bold;
     background-color: #fee2e2;
     color: white;
     display: none;
     z-index: 1000;
 }
-
 .mje-error {
-    background-color: #fee2e2;
+    background-color: #f39393;
 }
 
 .mje-exito {
-    background-color: #16a74a;
+    background-color: #16a34a;
 }
 
 .btn-editar, .btn-eliminar {
@@ -197,7 +180,7 @@ th {
 
 .modulos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, lfr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 25px;
 }
 
@@ -208,7 +191,7 @@ th {
     background-color: white;
     padding: 35px 25px;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.2, box-shadow 0.2s;
 }
 
@@ -238,5 +221,5 @@ th {
 
 .tarjeta-deshabilitada:hover {
     transform: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
