@@ -51,6 +51,15 @@ SGA/
     ├── alumnos.js
     └── docentes.js
 
+## Estado Actual
+- Pagina de inicio y navegacion entre modulos
+- modulo alumnos docentes
+- CRUD alumnos/docentes
+- Validaciones de formularios
+- Persistencia mediante localstorage
+- Organizacion del codigo y refactorizacion
+- Separacion inicial entre Frontend y Backend
+
 ## Almacenamiento
 
 - localStorage
