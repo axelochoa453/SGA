@@ -8,8 +8,8 @@ POST http://localhost:3000/alumnos
 Content-Type: application/json
 
 {
-    "id": 3,
-    "nombre": "Lucía",
+    "id": 5,
+    "nombre": "Rocio",
     "carrera": "Programación"
 }
 ###

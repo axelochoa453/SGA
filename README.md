@@ -27,12 +27,12 @@ Actualmente:
 - HTML5
 - JavaScript
 - CSS
+- Express
+- Node.js
 
 
 Próximamente:
 - React
-- Node.js
-- Express
 - MongoDB
 
 ## Estado del proyecto
@@ -59,6 +59,11 @@ SGA/
 - Persistencia mediante localstorage
 - Organizacion del codigo y refactorizacion
 - Separacion inicial entre Frontend y Backend
+- Implementacion de validaciones para los datos recibidos mediante req.body
+- Uso de status 400 para datos invalidos
+- Status 404 para alumno no encontrado
+- Status 201 para registrar nuevo alumno
+- Manejo basico de errores en las operaciones del CRUD
 
 ## Almacenamiento
 

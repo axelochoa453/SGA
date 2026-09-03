@@ -14,10 +14,4 @@ router.put("/:id", actualizarAlumno)
 
 router.put("/:id", eliminarAlumno)
 
-router.delete("/:id", (req, res) => {
-    const id = Number(req.params.id)
-    alumnos = alumnos.filter(alumno => alumno.id !== id)
-    res.json({mensaje: "Alumno eliminado correctamente"})
-})
-
 module.exports = router
