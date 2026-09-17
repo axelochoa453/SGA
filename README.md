@@ -27,49 +27,70 @@ Actualmente:
 - HTML5
 - JavaScript
 - CSS
-- Express
+- express
 - Node.js
+- MongoDB
 
 
 Próximamente:
 - React
-- MongoDB
+
 
 ## Estado del proyecto
 
 - Versión: 
-Clase 10 - Estructura actual
+Clase 12 - Estructura actual
 SGA/
-├── index.html
-├── alumnos.html
-├── docentes.html
-│
-├── css/
-│   └── estilos.css
-│
-└── js/
-    ├── alumnos.js
-    └── docentes.js
+frontend
+ ├── index.html
+ ├── alumnos.html
+ ├── docentes.html
+ │
+ ├── css/
+ │   └── estilos.css
+ │
+ └── js/
+      ├── alumnos.js
+      └── docentes.js
+backend
+ ├── config/
+ |    └── database.js
+ ├── controllers/
+ |    └── alumnos.controller.js
+ ├── data/
+ |    └── alumnos.js
+ ├── models/
+ |    └── Alumno.js
+ ├── routes/
+      └── alumnos.routes.js
 
-## Estado Actual
-- Pagina de inicio y navegacion entre modulos
-- modulo alumnos docentes
+## Estado actual
+- Página de inicio y navegación entre módulos
+- Módulo alumnos docentes
 - CRUD alumnos/docentes
 - Validaciones de formularios
-- Persistencia mediante localstorage
-- Organizacion del codigo y refactorizacion
-- Separacion inicial entre Frontend y Backend
-- Implementacion de validaciones para los datos recibidos mediante req.body
-- Uso de status 400 para datos invalidos
-- Status 404 para alumno no encontrado
-- Status 201 para registrar nuevo alumno
-- Manejo basico de errores en las operaciones del CRUD
+- Persistencia mediante localStorage
+- Organización del código y refactorización
+- Separación inicial entre Frontend y Backend
+- Implementación de validaciones para los datos recibidos mediante req.body
+- Uso de status 400 para datos inválidos
+- status 404 para alumno no encontrado
+- status 201 para registrar nuevo alumno
+- Manejo básico de errores en la operaciones del CRUD.
+- Instalación de mongoose
+- Creación de la conexión con MongoDB en config/database.js
+- Creación del Schema y modelo Alumno
+- Reemplazo del array en memoria por una colección de MongoDB
+- Modificación de GET /alumnos para consultar MongoDB mediante mongoose
+- Prueba de la API con datos almacenados en MongoDB
+
 
 ## Almacenamiento
 
 - localStorage
 - JSON.stringify()
 - JSON.parse()
+- MongoDB
 
 ## Autor
 

@@ -15,7 +15,7 @@
         <header>
             <nav>
                 <a href="index.html">Inicio</a>
-                <a href="alumnos.html">Alumnos</a>
+                <a href="alumnos.html" class="activo">Alumnos</a>
                 <a href="docentes.html">Docentes</a>
             </nav>
         </header>
@@ -24,6 +24,10 @@
             <section class="formulario-container">
                 <h2>Alta de Alumno</h2>
                 <form id="formulario">
+                    <div class="campo">
+                        <label for="legajo">Legajo</label>
+                        <input type="text" id="legajo">
+                    </div>
                     <div class="campo">
                         <label for="nombre">Nombre</label>
                         <input type="text" id="nombre">
@@ -36,7 +40,7 @@
                         <label for="correo">Correo electrónico</label>
                         <input type="texto" id="correo">
                     </div>
-                    <div class="accciones-form">
+                    <div class="acciones-form">
                     <button type="submit" id="btnGuardar">Guardar Alumno</button>
                     <button type="button" id="btnCancelar" class="btn-cancelar">Cancelar</button>
                     </div>
@@ -48,7 +52,7 @@
                 <table>
                     <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Legajo</th>
                             <th>Nombre</th>
                             <th>Carrera</th>
                             <th>Correo</th>
@@ -60,5 +64,6 @@
             </section>
             <div id="mensaje" class="mensaje"></div>
         </main>
+        
     </body>
 </html>

@@ -58,7 +58,6 @@ h2 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-
 form {
     display: grid;
     gap: 18px;
@@ -237,6 +236,6 @@ th {
     background-color: #6b7280;
 }
 
-.btn-cancelar::hover {
+.btn-cancelar:hover {
     background-color: #4b5563;
 }
