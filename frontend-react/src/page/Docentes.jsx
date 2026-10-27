@@ -1,6 +1,6 @@
 import { ListaDocentes } from "../components/ListaDocentes"
 import { useState } from "react"
-import FormularioA from "../components/FormularioA"
+import FormularioD from "../components/FormularioD"
 
 export default function docentes()
 {
@@ -18,7 +18,7 @@ function seleccionarDocente(docente) {
 
 return (
     <>
-    <FormularioA key={docenteEditar?.legajo ?? "nuevo"}
+    <FormularioD key={docenteEditar?.legajo ?? "nuevo"}
     onDocenteCreado={docenteCreado}
     docenteEditar={docenteEditar}
     onCancelar={() => setDocenteEditar(null)}
