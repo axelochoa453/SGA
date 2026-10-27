@@ -1,6 +1,6 @@
-import { ListaAlumnos } from "./components/ListaAlumnos"
+import { ListaAlumnos } from "../components/ListaAlumnos"
 import { useState } from "react"
-import FormularioA from "./components/FormularioA"
+import FormularioA from "../components/FormularioA"
 
 export default function alumnos()
 {

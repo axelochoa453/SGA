@@ -1,4 +1,6 @@
+import Alert from "@mui/material/Alert";
 import { useState } from "react";
+import { Box, Button, Paper, Stack, TextField, Typography } from "@mui/material";
 const API_ALUMNOS = "http://localhost:3000/alumnos"
 
 function FormularioA({ onAlumnoCreado, alumnoEditar, onCancelar }){
@@ -62,61 +64,110 @@ function FormularioA({ onAlumnoCreado, alumnoEditar, onCancelar }){
         onCancelar()
     }
     return(
-        <>
-        <h2>{alumnoEditar ? "Editar alumno" : "Nuevo Alumno"}</h2>
-        <form onSubmit={guardar}>
-            <label htmlFor="legajo">Legajo</label>
-            <input
-            id="legajo"
-            name="legajo"
-            value={formulario.legajo}
-            onChange={manejarCambio}
-            required
-            />
-            <label htmlFor="nombre">Nombre</label>
-            <input
-            id="nombre"
-            name="nombre"
-            value={formulario.nombre}
-            onChange={manejarCambio}
-            required
-            />
-            <label htmlFor="carrera">Carrera</label>
-            <input
-            id="carrera"
-            name="carrera"
-            value={formulario.carrera}
-            onChange={manejarCambio}
-            required
-            />
-            <label htmlFor="correo">Correo</label>
-            <input
-            id="correo"
-            name="correo"
-            value={formulario.correo}
-            onChange={manejarCambio}
-            required
-            />
-            <button type="submit" disabled={guardando}>
-                {guardando 
-                ? "Guardando..." 
-                : alumnoEditar 
-                    ? "Guardar cambios"
-                    : "Guardar"}
-            </button>
-            {alumnoEditar && (
-                <button
-                type="button"
-                onClick={cancelar}
-                disabled={guardando}
-                >
-                    Cancelar
-                </button>
-            )}
-            <br />
-            {error && <p role="alert">{error}</p>}
-        </form>
-        </>
+        <Paper
+            elevation={0}
+            sx={{
+                p: { xs: 2.5, md: 4 },
+                borderRadius: 4,
+                border: 1,
+                borderColor: "divider",
+                backgroundColor: "background.paper",
+                boxShadow: (theme) =>
+                    theme.palette.mode === "dark"
+                        ? "0 16px 40px rgba(10,14,17,0.45)"
+                        : "0 12px 32px rgba(82,109,130,0.12)"
+            }}
+        >
+            <Typography variant="h4" component="h2" sx={{ fontWeight: 800, mb: 3 }}>
+                {alumnoEditar ? "Editar alumno" : "Nuevo Alumno"}
+            </Typography>
+            <Box component="form" onSubmit={guardar} sx={{ display: "grid", gap: 2.5 }}>
+                <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
+                    <TextField
+                        fullWidth
+                        id="legajo"
+                        name="legajo"
+                        label="Legajo"
+                        value={formulario.legajo}
+                        onChange={manejarCambio}
+                        required
+                        sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
+                    />
+                    <TextField
+                        fullWidth
+                        id="nombre"
+                        name="nombre"
+                        label="Nombre"
+                        value={formulario.nombre}
+                        onChange={manejarCambio}
+                        required
+                        sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
+                    />
+                </Stack>
+
+                <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
+                    <TextField
+                        fullWidth
+                        id="carrera"
+                        name="carrera"
+                        label="Carrera"
+                        value={formulario.carrera}
+                        onChange={manejarCambio}
+                        required
+                        sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
+                    />
+                    <TextField
+                        fullWidth
+                        id="correo"
+                        name="correo"
+                        label="Correo"
+                        value={formulario.correo}
+                        onChange={manejarCambio}
+                        required
+                        sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
+                    />
+                </Stack>
+
+                <Stack direction={{ xs: "column", sm: "row" }} spacing={2} sx={{ mt: 1 }}>
+                    <Button
+                        type="submit"
+                        variant="contained"
+                        disabled={guardando}
+                        sx={{
+                            borderRadius: 3,
+                            px: 3,
+                            py: 1.25,
+                            fontWeight: 700,
+                            textTransform: "none"
+                        }}
+                    >
+                        {guardando 
+                        ? "Guardando..." 
+                        : alumnoEditar 
+                            ? "Guardar cambios"
+                            : "Guardar"}
+                    </Button>
+                    {alumnoEditar && (
+                        <Button
+                            type="button"
+                            variant="outlined"
+                            onClick={cancelar}
+                            disabled={guardando}
+                            sx={{
+                                borderRadius: 3,
+                                px: 3,
+                                py: 1.25,
+                                fontWeight: 700,
+                                textTransform: "none"
+                            }}
+                        >
+                            Cancelar
+                        </Button>
+                    )}
+                </Stack>
+                {error && <Typography role="alert" color="error.main" sx={{ fontWeight: 600 }}>{error}</Typography>}
+            </Box>
+        </Paper>
     )
 }
 export default FormularioA
