@@ -108,10 +108,10 @@ function FormularioD({ onDocenteCreado, docenteEditar, onCancelar }){
                 <Stack direction={{ xs: "column", md: "row" }} spacing={2}>
                     <TextField
                         fullWidth
-                        id="carrera"
-                        name="carrera"
-                        label="Carrera"
-                        value={formulario.carrera}
+                        id="especialidad"
+                        name="especialidad"
+                        label="Especialidad"
+                        value={formulario.especialidad}
                         onChange={manejarCambio}
                         required
                         sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
