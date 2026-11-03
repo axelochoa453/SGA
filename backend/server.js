@@ -5,13 +5,14 @@ const cors = require("cors")
 
 const conectarDB = require("./config/database")
 const alumnosRoutes = require("./routes/alumnos.routes")
+const materiaRoutes = require("./routes/materiaRoutes")
 
 const app = express()
 
 app.use(express.json())
 app.use(cors())
 app.use("/alumnos", alumnosRoutes)
-
+app.use("/materias", materiaRoutes)
 const PORT = Number(process.env.PORT) || 3000
 
 conectarDB()

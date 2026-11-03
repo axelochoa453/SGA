@@ -170,4 +170,4 @@ function FormularioD({ onDocenteCreado, docenteEditar, onCancelar }){
         </Paper>
     )
 }
-export default FormularioA
+export default FormularioD

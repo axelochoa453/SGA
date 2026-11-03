@@ -21,6 +21,20 @@ function CambiarTitulo() {
             }}>
                 Docentes
             </button>
+            <button onClick={() => setTitulo("Materias")} style={{
+                fontSize: "20px",
+                color: "lightgreen",
+                padding: "5px"
+            }}>
+                Materias
+            </button>
+            <button onClick={() => setTitulo("Ayuda")} style={{
+                fontSize: "20px",
+                color: "lightgreen",
+                padding: "5px"
+            }}>
+                Ayuda
+            </button>
         </div>
         </>
     )

@@ -49,7 +49,7 @@ try {
             body: JSON.stringify(alumno) 
         })
         if (!respuesta.ok) { 
-           throw new Error("La API respondió con un error.")
+            throw new Error("La API respondió con un error.")
         }
         mostrarMensaje("Alumno guardado correctamente", "mje-exito")
     } else { 

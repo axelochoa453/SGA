@@ -35,3 +35,65 @@ Content-Type: application/json
     "nombre": "Rocío",
     "carrera": "Programación"
 }
+
+
+
+
+
+
+
+
+###
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "MAT001",
+    "nombre": "Matemática",
+    "descripcion": "",
+    "cargaHoraria": 50,
+    "estado": "activo"
+}
+
+###
+DELETE http://localhost:3000/materias/MAT001
+
+
+###
+PUT http://localhost:3000/materias/MAT001
+Content-Type: application/json
+
+{
+    "nombre": "Matemática Avanzada",
+    "descripcion": "Materia de matemáticas avanzadas",
+    "cargaHoraria": 60,
+    "estado": "inactiva"
+}
+
+
+###
+POST http://localhost:3000/materias
+Content-Type: application/json
+
+{
+    "codigo": "MAT003",
+    "nombre": "Algebra",
+    "descripcion": "Algebra lineal",
+    "cargaHoraria": 50,
+    "estado": "ACTIVO"
+}
+
+###
+DELETE http://localhost:3000/materias/MAT002
+
+###
+GET http://localhost:3000/materias
+
+###
+
+GET http://localhost:3000/materias/MAT003
+
+
+###
+
+GET http://localhost:3000/materias/MAT002

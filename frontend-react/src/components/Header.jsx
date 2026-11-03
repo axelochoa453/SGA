@@ -6,6 +6,8 @@ import SelectorTema from "./SelectorTema"
 const navegacion = [
     { label: "Inicio", to: "/" },
     { label: "Alumnos", to: "/alumnos" },
+    { label: "Docentes", to: "/docentes" },
+    { label: "Materias", to: "/materias"},
     { label: "Ayuda", to: "/ayuda" }
 ]
 
