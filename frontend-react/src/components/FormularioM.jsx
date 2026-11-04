@@ -1,6 +1,6 @@
 import Alert from "@mui/material/Alert";
 import { useState } from "react";
-import { Box, Button, Paper, Stack, TextField, Typography } from "@mui/material";
+import { Box, Button, MenuItem, Paper, Stack, TextField, Typography } from "@mui/material";
 const API_MATERIAS = "http://localhost:3000/materias"
 
 function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }){
@@ -44,7 +44,14 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }){
             })
 
             if (!respuesta.ok) {
-                throw new Error(`No se pudo guardar la materia. Estado HTTP: ${respuesta.status}`)
+                let detalle = ""
+                try {
+                    const data = await respuesta.json()
+                    detalle = data.mensaje || data.message || JSON.stringify(data)
+                } catch {
+                    detalle = ""
+                }
+                    throw new Error(detalle || `No se pudo guardar la materia. Estado HTTP: ${respuesta.status}`)
             }
 
             setFormulario({
@@ -93,6 +100,7 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }){
                         value={formulario.codigo}
                         onChange={manejarCambio}
                         required
+                        disabled={Boolean(materiaEditar)}
                         sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
                     />
                     <TextField
@@ -115,7 +123,6 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }){
                         label="Descripción"
                         value={formulario.descripcion}
                         onChange={manejarCambio}
-                        required
                         sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
                     />
                     <TextField
@@ -128,6 +135,20 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }){
                         required
                         sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
                     />
+                    <TextField
+                        select
+                        fullWidth
+                        id="estado"
+                        name="estado"
+                        label="Estado"
+                        value={formulario.estado}
+                        onChange={manejarCambio}
+                        required
+                        sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
+                    >
+                    <MenuItem value="activa">Activa</MenuItem>
+                    <MenuItem value="inactiva">Inactiva</MenuItem>
+                </TextField>
                 </Stack>
 
                 <Stack direction={{ xs: "column", sm: "row" }} spacing={2} sx={{ mt: 1 }}>

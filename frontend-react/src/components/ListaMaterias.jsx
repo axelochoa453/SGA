@@ -103,7 +103,18 @@ export function ListaMaterias({ actualizar, onMateriaCreada, onEditarMateria }) 
                         </Typography>
                         <Stack direction="row" spacing={1} flexWrap="wrap" useFlexGap>
                             <Chip label={`Código ${materia.codigo}`} size="small" />
-                            <Chip label={materia.carrera} size="small" variant="outlined" />
+                            <Chip
+                                label={`${materia.cargaHoraria ?? "-"} hs`}
+                                size="small"
+                                variant="outlined"
+                            />
+                        <Chip
+                            label={materia.estado ?? "Sin estado"}
+                            size="small"
+                            variant="outlined"
+                            color={materia.estado?.toLowerCase() === "activa" ? "success" : "default"}
+                            sx={{ textTransform: "capitalize" }}
+                        />
                         </Stack>
                         <Typography variant="body2" color="text.secondary">{materia.descripcion}</Typography>
                     </Stack>

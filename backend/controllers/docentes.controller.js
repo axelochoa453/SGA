@@ -1,4 +1,4 @@
-const Alumno = require("../models/Alumno") 
+const Docente = require("../models/Docentes") 
 
 async function obtenerDocentes(req, res) { 
     const docentes = await Docente.find()
@@ -18,8 +18,8 @@ async function obtenerDocente(req, res) {
 }
 
 async function crearDocente(req, res) {
-    const { legajo, nombre, carrera, correo } = req.body 
-    if (!legajo || !nombre || !carrera || !correo) {
+    const { legajo, nombre, especialidad, correo } = req.body 
+    if (!legajo || !nombre || !especialidad || !correo) {
         return res.status(400).json({
             mensaje: "Todos los campos son obligatorios"
         })
@@ -45,17 +45,17 @@ async function crearDocente(req, res) {
     const nuevoDocente = await Docente.create({ 
         legajo,
         nombre,
-        carrera,
+        especialidad,
         correo
     })
     res.status(201).json(nuevoDocente) 
 }
 
 async function actualizarDocente(req, res) {
-    const { nombre, carrera, correo } = req.body
+    const { nombre, especialidad, correo } = req.body
     const docente = await Docente.findOneAndUpdate( 
         { legajo: Number(req.params.id) }, 
-        { nombre, carrera, correo }, 
+        { nombre, especialidad, correo }, 
         { returnDocument: "after" } 
     )
     if (!docente) {

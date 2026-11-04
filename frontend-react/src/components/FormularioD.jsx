@@ -91,6 +91,7 @@ function FormularioD({ onDocenteCreado, docenteEditar, onCancelar }){
                         value={formulario.legajo}
                         onChange={manejarCambio}
                         required
+                        disabled={Boolean(docenteEditar)}
                         sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
                     />
                     <TextField

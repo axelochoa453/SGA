@@ -5,7 +5,7 @@ const {
     obtenerMateria, 
     crearMateria, 
     actualizarMateria, 
-    eliminarMateria } = require("../controllers/materia.controller")
+    eliminarMateria } = require("../controllers/materias.controller")
 const router = express.Router() 
 
 router.get("/", obtenerMaterias) 
