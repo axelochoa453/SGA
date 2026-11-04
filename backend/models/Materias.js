@@ -24,10 +24,10 @@ const materiaSchema = new mongoose.Schema({
     },
     estado: {
         type: String,
-        enum: ["activa", "inactiva", "ACTIVA", "INACTIVA", "Activa", "Inactiva", "inactiva", "INACTIVA"],
+        enum: ["activa", "inactiva"],
         default: "activa",
         required: true,
-        uppercase: true,
+        texttransform: "uppercase",
         trim: true
     }
 },

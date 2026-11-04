@@ -29,19 +29,14 @@ async function crearMateria(req, res) {
             mensaje: "El código debe ser un texto"
         })
     }
-    if (estado !== "activa" && estado !== "inactiva" && estado !== "ACTIVA" && estado !== "INACTIVA" && estado !== "Activa" && estado !== "Inactiva") {
-        return res.status(400).json({
-            mensaje: "El estado debe ser activo o inactivo"
-        })
-    }
     if (typeof cargaHoraria !== "number" || cargaHoraria < 1) {
         return res.status(400).json({
             mensaje: "La carga horaria debe ser un número entero mayor a 0"
         })
     }
-    if (!codigo || !nombre || !cargaHoraria || !estado) {
+    if (!codigo || !nombre || !cargaHoraria) {
         return res.status(400).json({
-            mensaje: "Los campos código, nombre, carga horaria y estado son obligatorios"
+            mensaje: "Los campos código, nombre ycarga horaria son obligatorios"
         })
     }
     const existe = await Materia.findOne({ 
