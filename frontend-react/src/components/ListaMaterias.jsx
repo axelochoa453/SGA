@@ -13,7 +13,7 @@ export function ListaMaterias({ actualizar, onMateriaCreada, onEditarMateria }) 
             return
         }
         try {
-            const respuesta = await fetch(`${API_MATERIAS}/${codigo}`, 
+            const respuesta = await fetch(`${API_MATERIAS}/${encodeURIComponent(codigo)}`,
                 { method: "DELETE" }
             )
             if (!respuesta.ok) {
@@ -116,7 +116,11 @@ export function ListaMaterias({ actualizar, onMateriaCreada, onEditarMateria }) 
                             sx={{ textTransform: "capitalize" }}
                         />
                         </Stack>
-                        <Typography variant="body2" color="text.secondary">{materia.descripcion}</Typography>
+                        {materia.descripcion && (
+                            <Typography variant="body2" color="text.secondary">
+                                {materia.descripcion}
+                            </Typography>
+                        )}
                     </Stack>
                     <Stack direction={{ xs: "row", sm: "row" }} spacing={1}>
                         <Button

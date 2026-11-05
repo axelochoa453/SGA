@@ -1,5 +1,4 @@
 const formulario = document.querySelector("#formulario")
-// const mensaje = document.querySelector("#mensaje")
 const listaMaterias = document.querySelector("#listaMaterias")
 let materiaEditandoId = null 
 let materiaEditar = null 

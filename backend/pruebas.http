@@ -48,11 +48,11 @@ POST http://localhost:3000/materias
 Content-Type: application/json
 
 {
-    "codigo": "MAT001",
+    "codigo": " MAT001 ",
     "nombre": "Matemática",
-    "descripcion": "",
-    "cargaHoraria": 50,
-    "estado": "activo"
+    "descripcion": "Descripción de la materia",
+    "cargaHoraria": 60,
+    "estado": "activa"
 }
 
 ###

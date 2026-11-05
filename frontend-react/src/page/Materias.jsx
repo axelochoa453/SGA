@@ -2,7 +2,7 @@ import { ListaMaterias } from "../components/ListaMaterias"
 import { useState } from "react"
 import FormularioMaterias from "../components/FormularioM"
 
-export default function materias()
+export default function Materias()
 {
 const [actualizar, setActualizar] = useState(0)
 const [materiaEditar, setMateriaEditar] = useState(null)

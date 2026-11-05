@@ -1,4 +1,3 @@
-import Alert from "@mui/material/Alert";
 import { useState } from "react";
 import { Box, Button, MenuItem, Paper, Stack, TextField, Typography } from "@mui/material";
 const API_MATERIAS = "http://localhost:3000/materias"
@@ -9,7 +8,7 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }){
         nombre: materiaEditar?.nombre ?? "",
         descripcion: materiaEditar?.descripcion ?? "",
         cargaHoraria: materiaEditar?.cargaHoraria ?? "",
-        estado: materiaEditar?.estado ?? ""
+        estado: materiaEditar?.estado ?? "activa"
     })
     const [error, setError] = useState("")
     const [guardando, setGuardando] = useState(false)
@@ -17,24 +16,33 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }){
     function manejarCambio(e) {
         const { name, value} = e.target
 
-        setFormulario({
-            ...formulario,
+        setFormulario(actual => ({
+            ...actual,
             [name]: value
-        })
+        }))
     }
 
     async function guardar(e) {
         e.preventDefault()
         setError("")
+
+        if (formulario.descripcion.length > 0 && !formulario.descripcion.trim()) {
+            setError("La descripción no puede contener únicamente espacios")
+            return
+        }
+
         setGuardando(true)
         
     const materia = {
         ...formulario,
+        codigo: formulario.codigo.trim(),
+        nombre: formulario.nombre.trim(),
+        descripcion: formulario.descripcion.trim(),
         cargaHoraria: Number(formulario.cargaHoraria)
     }
     const editando = Boolean(materiaEditar)
     const url = editando 
-                ? `${API_MATERIAS}/${materiaEditar.codigo}`
+                ? `${API_MATERIAS}/${encodeURIComponent(materiaEditar.codigo)}`
                 : API_MATERIAS
         try {
             const respuesta = await fetch(url, {
@@ -59,7 +67,7 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }){
                 nombre: "",
                 descripcion: "",
                 cargaHoraria: "",
-                estado: ""
+                estado: "activa"
             })
             onMateriaCreada()
         } catch (error) {
@@ -111,6 +119,7 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }){
                         value={formulario.nombre}
                         onChange={manejarCambio}
                         required
+                        inputProps={{ minLength: 5, maxLength: 30 }}
                         sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
                     />
                 </Stack>
@@ -132,7 +141,9 @@ function FormularioM({ onMateriaCreada, materiaEditar, onCancelar }){
                         label="Carga Horaria"
                         value={formulario.cargaHoraria}
                         onChange={manejarCambio}
+                        type="number"
                         required
+                        inputProps={{ min: 1, step: 1 }}
                         sx={{"& .MuiOutlinedInput-root": { borderRadius: 3 }}}
                     />
                     <TextField

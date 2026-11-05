@@ -1,5 +1,4 @@
 const express = require("express") 
-// const alumnosController = require("../controllers/alumnos.controller")
 const { 
     obtenerMaterias, 
     obtenerMateria, 
