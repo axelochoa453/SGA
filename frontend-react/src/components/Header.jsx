@@ -1,9 +1,16 @@
-import { AppBar, Box, Container, IconButton, Link, Stack, Toolbar, Typography } from "@mui/material"
+import { AppBar, Box, Button, Container, IconButton, Link, Stack, Toolbar, Typography } from "@mui/material"
 import HelpOutlineRoundedIcon from "@mui/icons-material/HelpOutlineRounded"
 import { Link as RouterLink } from "react-router-dom"
 import SelectorTema from "./SelectorTema";
+import {usenavigate} from "react-router-dom"
+import { useAuth } from "../context/useAuth"
 
 export default function Header() {
+    const { token } = useAuth()
+    const navigate = useNavigate()
+
+    const logout = () => {
+
     return (
         <AppBar
             component="header"
@@ -106,6 +113,15 @@ export default function Header() {
                         >
                             <HelpOutlineRoundedIcon />
                         </IconButton>
+                        <Button
+                            type="button"
+                            variant="outlined"
+                            color="inherit"
+                            onClick={logout}
+                            sx={{ textTransform: "none", fontWeight: 600 }}
+                        >
+                            Cerrar Sesión
+                        </Button>
                         <SelectorTema />
                     </Stack>
                 </Toolbar>
