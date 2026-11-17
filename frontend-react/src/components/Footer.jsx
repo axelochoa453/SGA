@@ -1,36 +1,35 @@
-import { Box, Typography } from "@mui/material"
+import Box from "@mui/material/Box"
+import Container from "@mui/material/Container"
+import Typography from "@mui/material/Typography"
 
-export function Footer() {
+export default function Footer(){
     return (
         <Box
             component="footer"
             sx={{
+                py: 2.5,
                 borderTop: 1,
                 borderColor: "divider",
-                backgroundColor: "background.paper",
-                py: 2.5,
-                px: { xs: 2, md: 3 }
+                bgcolor: "background.paper"
             }}
         >
-            <Box
+            <Container
+                maxWidth="lg"
                 sx={{
-                    maxWidth: 1200,
-                    mx: "auto",
                     display: "flex",
-                    flexDirection: { xs: "column", sm: "row" },
                     justifyContent: "space-between",
                     alignItems: "center",
-                    gap: 1,
-                    textAlign: { xs: "center", sm: "left" }
+                    flexWrap: "wrap",
+                    gap: 1
                 }}
             >
-                <Typography variant="body2" sx={{ color: "text.secondary", fontWeight: 600 }}>
+                <Typography variant="body2" fontWeight={600}>
                     Sistema de Gestión Académica
                 </Typography>
-                <Typography variant="body2" sx={{ color: "text.secondary" }}>
-                    Axel Diego Ochoa · SGA · Proyecto Programación IV
+                <Typography variant="body2" color="text.secondary">
+                    SGA: Proyecto Programación IV
                 </Typography>
-            </Box>
+            </Container>
         </Box>
     )
 }

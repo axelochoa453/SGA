@@ -1,28 +1,30 @@
-require("dotenv").config()
+require("dotenv").config() 
 
-const express = require("express")
+const express = require("express") 
 const cors = require("cors")
 
 const conectarDB = require("./config/database")
-const alumnosRoutes = require("./routes/alumnos.routes")
-const materiaRoutes = require("./routes/materiaRoutes")
-const docentesRoutes = require("./routes/Docentes.routes")
+const alumnosRoutes = require("./routes/alumnos.routes") 
+const docentesRoutes = require("./routes/docentes.routes")
+const authRoutes  = require("./routes/authRoutes")
 
-const app = express()
 
-app.use(express.json())
-app.use(cors())
-app.use("/alumnos", alumnosRoutes)
-app.use("/materias", materiaRoutes)
+const app = express() 
+
+app.use(express.json()) 
+app.use(cors()) 
+app.use("/alumnos", alumnosRoutes) 
 app.use("/docentes", docentesRoutes)
-const PORT = Number(process.env.PORT) || 3000
+app.use("/auth", authRoutes)
 
-conectarDB()
+const PORT = process.env.PORT 
+
+conectarDB() 
 
 console.log("Ejecutado con nodemon")
 
-app.listen(PORT, () => {
-  console.log(`Servidor funcionando en http://localhost:${PORT}`)
+app.listen(PORT, () => { 
+    console.log(`Servidor funcionando en http://localhost:${PORT}`)
 })
 
 

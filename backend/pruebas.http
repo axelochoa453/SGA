@@ -25,130 +25,43 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:3000/alumnos/1021
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZThjYmUyZGFlOGEwMzFiMGJhNDJiZiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzk0NTE5NTgwLCJleHAiOjE3OTQ1MjMxODB9.NAL0l5InkKwOdIqqJkjKRXCjlmjQjBoBLMhBgYJ6XJY
 
 ###
 POST http://localhost:3000/alumnos
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZThjYmUyZGFlOGEwMzFiMGJhNDJiZiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzk0NTE5NTgwLCJleHAiOjE3OTQ1MjMxODB9.NAL0l5InkKwOdIqqJkjKRXCjlmjQjBoBLMhBgYJ6XJY
 
 {
-    "id": 5,
+    "legajo": 1066,
     "nombre": "Rocío",
-    "carrera": "Programación"
-}
-
-
-
-
-
-
-
-
-###
-POST http://localhost:3000/materias
-Content-Type: application/json
-
-{
-    "codigo": " MAT001 ",
-    "nombre": "Matemática",
-    "descripcion": "Descripción de la materia",
-    "cargaHoraria": 60,
-    "estado": "activa"
-}
-
-###
-DELETE http://localhost:3000/materias/MAT001
-
-
-###
-PUT http://localhost:3000/materias/MAT001
-Content-Type: application/json
-
-{
-    "nombre": "Matemática Avanzada",
-    "descripcion": "Materia de matemáticas avanzadas",
-    "cargaHoraria": 60,
-    "estado": "inactiva"
-}
-
-
-###
-POST http://localhost:3000/materias
-Content-Type: application/json
-
-{
-    "codigo": "MAT003",
-    "nombre": "Algebra",
-    "descripcion": "Algebra lineal",
-    "cargaHoraria": 50,
-    "estado": "ACTIVO"
-}
-
-###
-DELETE http://localhost:3000/materias/MAT002
-
-###
-GET http://localhost:3000/materias
-
-###
-
-GET http://localhost:3000/materias/MAT003
-
-
-###
-
-GET http://localhost:3000/materias/MAT002
-
-
-
-
-
-
-
-###
-GET http://localhost:3000/docentes
-
-###
-POST http://localhost:3000/docentes
-Content-Type: application/json
-
-{
-    "legajo": 1001,
-    "nombre": "Juan Pérez",
-    "carrera": "Sistemas",
-    "correo": "juan@mail.com"
-}
-
-###
-DELETE http://localhost:3000/docentes/1001
-
-
-###
-PUT http://localhost:3000/docentes/1001
-Content-Type: application/json
-
-{
-    "nombre": "Juan Carlos Pérez",
-    "carrera": "Sistemas",
-    "correo": "juancarlos@mail.com"
-}
-
-
-###
-POST http://localhost:3000/docentes
-Content-Type: application/json
-
-{
-    "legajo": 1002,
-    "nombre": "María García",
     "carrera": "Programación",
-    "correo": "maria@mail.com"
+    "correo": "rocio@mail.com"
 }
-
-###
-DELETE http://localhost:3000/docentes/1002
 
 ###
 GET http://localhost:3000/docentes
 
 ###
-GET http://localhost:3000/docentes/1003
+POST http://localhost:3000/docentes
+Content-Type: application/json
+
+{
+    "dni": 5222311,
+    "nombre": "Rocío",
+    "especialidad": "Programación",
+    "correo": "rocio@mail.com"
+}
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "admin@sga.com",
+    "password":"ClaveDePrueba123!"
+}
+
+###
+GET http://localhost:3000/alumnos
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZhZThjYmUyZGFlOGEwMzFiMGJhNDJiZiIsInJvbCI6ImFkbWluIiwiaWF0IjoxNzk0NTA3NzA4LCJleHAiOjE3OTQ1MTEzMDh9.vJbyQWwW8y6YTBU2EKEUVbTn87wJxZqYwzKZQuy0pnY
