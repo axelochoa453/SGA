@@ -45,7 +45,9 @@ export default function Login() {
 
             setEmail("")
             setPassword("")
+
             navigate("/")
+
         } catch (error) {
             console.error("Error en login: ", error)
             setError(error.message || "No se pudo conectar con el servidor.")

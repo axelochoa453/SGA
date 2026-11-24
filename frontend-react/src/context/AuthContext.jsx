@@ -1,7 +1,3 @@
-import {createContext, useEffect, useState} from "react"
+import { createContext } from "react"
 
-const AuthContext = createContext()
-
-
-// export { AuthContext }
-export default { AuthProvider, AuthContext}
+export const AuthContext = createContext()

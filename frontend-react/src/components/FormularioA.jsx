@@ -6,7 +6,7 @@ import Paper from "@mui/material/Paper"
 import TextField from "@mui/material/TextField"
 import Typography from "@mui/material/Typography"
 const API_ALUMNOS = "http://localhost:3000/alumnos"
-import { useAuth } from "../context/useAuth"
+import { useAuth } from "../context/useAuth";
 
 function FormularioA({ onAlumnoCreado, alumnoEditar, onCancelar }){
     const [formulario, setFormulario] = useState({

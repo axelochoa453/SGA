@@ -1,6 +1,5 @@
-import {useEffect, useState} from "react"
-import {AuthContext} from "./AuthContext"
-
+import { useEffect, useState } from "react"
+import { AuthContext } from "./AuthContext"
 
 const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(() => localStorage.getItem("token"))
@@ -29,7 +28,7 @@ const AuthProvider = ({ children }) => {
             }
             setToken(tokenGuardado)
             } catch (error){
-                console.Error("Error al iniciar sesión", error)
+                console.error("Error al iniciar sesión", error)
                 cerrarSesion()
             } finally {
                 setCargando(false)
@@ -46,4 +45,4 @@ const AuthProvider = ({ children }) => {
     )
 }
 
-export { AuthProvider }
+export default AuthProvider

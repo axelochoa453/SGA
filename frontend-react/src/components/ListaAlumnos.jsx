@@ -23,10 +23,10 @@ export function ListaAlumnos({ actualizar, onAlumnoCreado, onEditarAlumno }) {
         try {
             const respuesta = await fetch(`${API_ALUMNOS}/${legajo}`, 
                 { method: "DELETE",
-                    headers: {
+                  headers: {
                     Authorization: `Bearer ${token}`
-                    }
-                }
+                  }
+                 }
             )
             if (!respuesta.ok) {
                 throw new Error(`No se pudo eliminar. Estado HTTP: ${respuesta.status}`)
@@ -43,7 +43,6 @@ export function ListaAlumnos({ actualizar, onAlumnoCreado, onEditarAlumno }) {
             setError("")
 
             try {
-            const token = localStorage.getItem("token")
             const respuesta = await fetch(API_ALUMNOS, {
                 headers: {Authorization: `Bearer ${token}`}
             })
